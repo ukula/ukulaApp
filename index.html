@@ -131,10 +131,35 @@ nav{
 .hero-logo{
     display:block;
     margin:0 auto 24px auto;
-    width:620px;
+
+    width:420px;
     max-width:90%;
-    margin-bottom:30px;
-    opacity:.85;
+    opacity:.96;
+
+    filter:
+    drop-shadow(0 0 18px rgba(177,77,77,.18))
+    drop-shadow(0 0 40px rgba(177,77,77,.10));
+
+    animation:floatLogo 5s ease-in-out infinite;
+
+    transform-style:preserve-3d;
+    transition:transform .15s ease-out;
+}
+
+@keyframes floatLogo{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
 }
     
 .hero p{
@@ -205,8 +230,12 @@ nav{
 }
 
 .card{
-    background:rgba(255,255,255,.03);
-    border:1px solid var(--border);
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+    -webkit-backdrop-filter:blur(18px);
+
     border-radius:26px;
     padding:28px;
     transition:.25s;
@@ -314,6 +343,78 @@ footer{
 
 }
 
+
+.shots-grid{
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:28px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.shot{
+    position:relative;
+
+    background:rgba(255,255,255,.03);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:28px;
+
+    overflow:hidden;
+
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+
+    box-shadow:
+    0 0 30px rgba(177,77,77,.08),
+    0 20px 40px rgba(0,0,0,.35);
+
+    transition:
+    transform .28s ease,
+    box-shadow .28s ease;
+}
+
+.shot:hover{
+    transform:translateY(-8px) scale(1.02);
+
+    box-shadow:
+    0 0 45px rgba(177,77,77,.16),
+    0 24px 60px rgba(0,0,0,.42);
+}
+
+.shot img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+/* gerçek boyutlara göre optimize */
+
+.shot-small{
+    width:260px;
+}
+
+.shot-medium{
+    width:320px;
+}
+
+.shot-tall{
+    width:300px;
+}
+
+@media(max-width:900px){
+
+    .shot-small,
+    .shot-medium,
+    .shot-tall{
+        width:100%;
+        max-width:380px;
+    }
+
+}
+
 </style>
 </head>
 <body>
@@ -414,17 +515,26 @@ footer{
 <section class="preview">
 
     <h2 class="section-title">
-        Minimal Interface
+        Screenshots
     </h2>
 
     <p class="section-sub">
-        Designed to stay out of your way while working.
+        Clean. Lightweight. Focused.
     </p>
 
-    <div class="preview-box">
+    <div class="shots-grid">
 
-        <!-- kendi screenshotunu koy -->
-        <img src="screenshot.png" alt="Ukula Screenshot">
+        <div class="shot shot-small">
+            <img src="Images/ukula3.png" alt="Ukula Screenshot">
+        </div>
+
+        <div class="shot shot-medium">
+            <img src="Images/ukula4.png" alt="Ukula Screenshot">
+        </div>
+
+        <div class="shot shot-tall">
+            <img src="Images/ukula5.png" alt="Ukula Screenshot">
+        </div>
 
     </div>
 
@@ -460,6 +570,19 @@ footer{
     </div>
 
 </footer>
+<script>
 
+const logo = document.querySelector('.hero-logo');
+
+window.addEventListener('mousemove', (e) => {
+
+    const x = (window.innerWidth / 2 - e.clientX) / 40;
+    const y = (window.innerHeight / 2 - e.clientY) / 40;
+
+    logo.style.transform = `rotateY(${-x}deg) rotateX(${y}deg)`;
+
+});
+
+</script>
 </body>
 </html>
