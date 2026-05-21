@@ -146,12 +146,22 @@ nav{
     margin-top:42px;
     flex-wrap:wrap;
 }
-.btn{
-    padding:16px 28px;
-    border-radius:16px;
-    text-decoration:none;
-    font-weight:600;
-    transition:.2s;
+
+    /* Buton içindeki ikon ve yazı hizalaması */
+.btn {
+    display: inline-flex;       /* İkon ve yazıyı yan yana hizalar */
+    align-items: center;        /* Dikey olarak ortalar */
+    padding: 16px 28px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .2s;
+}
+
+/* Eğer resimler çok büyük gelirse diye bir kısıtlama */
+.btn img {
+    height: 20px;
+    width: auto;
 }
 .btn-primary{
     background:var(--accent);
@@ -344,10 +354,8 @@ footer{
 
     
 <section class="hero">
-
     <div class="hero-inner">
-
-       <img src="Images/YOUR-IMAGE.png" class="hero-logo">
+        <img src="Images/YOUR-IMAGE.png" class="hero-logo">
 
         <div class="badge">
             OCR • Translate • Windows
@@ -360,8 +368,17 @@ footer{
             Lightweight, distraction-free and built for fast workflows.
         </p>
 
+        <div class="hero-buttons">
+            <a href="https://github.com/kullaniciadi/ukula" class="btn btn-secondary">
+                <img src="Images/github-icon.png" style="width:20px; vertical-align:middle; margin-right:8px;"> 
+                GitHub
+            </a>
+            <a href="https://gumroad.com/l/ukula" class="btn btn-primary">
+                <img src="Images/gumroad-icon.png" style="width:20px; vertical-align:middle; margin-right:8px;"> 
+                Get Ukula
+            </a>
+        </div>
     </div>
-
 </section>
 
 <section class="features" id="features">
