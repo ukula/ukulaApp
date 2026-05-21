@@ -3,11 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 <title>Ukula</title>
-
 <style>
-
 :root{
     --bg:#0f0b0b;
     --bg2:#171212;
@@ -18,17 +15,14 @@
     --accentSoft:#8e3d3d;
     --border:rgba(255,255,255,.06);
 }
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 html{
     scroll-behavior:smooth;
 }
-
 body{
     background:
     radial-gradient(circle at top, rgba(177,77,77,.12), transparent 35%),
@@ -37,7 +31,6 @@ body{
     font-family:Segoe UI, sans-serif;
     overflow-x:hidden;
 }
-
 /* küçük motif hissi */
 body::before{
     content:"";
@@ -52,9 +45,7 @@ body::before{
         rgba(255,255,255,.3) 18px 19px
     );
 }
-
 /* navbar */
-
 nav{
     width:100%;
     padding:24px 10%;
@@ -68,32 +59,25 @@ nav{
     border-bottom:1px solid var(--border);
     z-index:50;
 }
-
 .logo{
     font-size:28px;
     font-weight:700;
     letter-spacing:.5px;
 }
-
-
 .nav-links{
     display:flex;
     gap:28px;
 }
-
 .nav-links a{
     color:var(--muted);
     text-decoration:none;
     transition:.2s;
     font-size:15px;
 }
-
 .nav-links a:hover{
     color:white;
 }
-
 /* hero */
-
 .hero{
     min-height:88vh;
     display:flex;
@@ -102,12 +86,10 @@ nav{
     padding:80px 10%;
     position:relative;
 }
-
 .hero-inner{
     text-align:center;
     max-width:900px;
 }
-
 .badge{
     display:inline-flex;
     justify-content:center;
@@ -120,48 +102,36 @@ nav{
     margin-bottom:28px;
     font-size:14px;
 }
-
 .hero h1{
     font-size:92px;
     line-height:1;
     margin-bottom:26px;
     letter-spacing:-3px;
 }
-
 .hero-logo{
     display:block;
     margin:0 auto 24px auto;
-
     width:420px;
     max-width:90%;
     opacity:.96;
-
     filter:
     drop-shadow(0 0 18px rgba(177,77,77,.18))
     drop-shadow(0 0 40px rgba(177,77,77,.10));
-
     animation:floatLogo 5s ease-in-out infinite;
-
     transform-style:preserve-3d;
     transition:transform .15s ease-out;
 }
-
 @keyframes floatLogo{
-
     0%{
         transform:translateY(0px);
     }
-
     50%{
         transform:translateY(-6px);
     }
-
     100%{
         transform:translateY(0px);
     }
-
 }
-    
 .hero p{
     color:var(--muted);
     font-size:22px;
@@ -169,7 +139,6 @@ nav{
     max-width:700px;
     margin:auto;
 }
-
 .hero-buttons{
     display:flex;
     justify-content:center;
@@ -177,7 +146,6 @@ nav{
     margin-top:42px;
     flex-wrap:wrap;
 }
-
 .btn{
     padding:16px 28px;
     border-radius:16px;
@@ -185,83 +153,65 @@ nav{
     font-weight:600;
     transition:.2s;
 }
-
 .btn-primary{
     background:var(--accent);
     color:white;
 }
-
 .btn-primary:hover{
     background:#c85d5d;
     transform:translateY(-2px);
 }
-
 .btn-secondary{
     border:1px solid var(--border);
     background:rgba(255,255,255,.03);
     color:white;
 }
-
 .btn-secondary:hover{
     background:rgba(255,255,255,.07);
 }
-
 /* features */
-
 .features{
     padding:80px 10%;
 }
-
 .section-title{
     font-size:42px;
     margin-bottom:14px;
 }
-
 .section-sub{
     color:var(--muted);
     margin-bottom:40px;
     line-height:1.7;
 }
-
 .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
     gap:22px;
 }
-
 .card{
     background:rgba(255,255,255,.045);
     border:1px solid rgba(255,255,255,.08);
-
     backdrop-filter:blur(18px);
     -webkit-backdrop-filter:blur(18px);
-
     border-radius:26px;
     padding:28px;
     transition:.25s;
 }
-
 .card:hover{
     transform:translateY(-4px);
     border-color:rgba(177,77,77,.25);
 }
-
 .card h3{
     margin-bottom:12px;
     font-size:20px;
 }
-
 .card p{
     color:var(--muted);
     line-height:1.7;
 }
-
 /* screenshot */
-
 .preview{
     padding:80px 10%;
 }
-
 .preview-box{
     margin-top:30px;
     border-radius:28px;
@@ -269,81 +219,62 @@ nav{
     border:1px solid var(--border);
     background:rgba(255,255,255,.03);
 }
-
 .preview-box img{
     width:100%;
     display:block;
 }
-
 /* footer */
-
 footer{
     padding:60px 10%;
     border-top:1px solid var(--border);
     margin-top:80px;
 }
-
 .footer-top{
     display:flex;
     justify-content:space-between;
     gap:30px;
     flex-wrap:wrap;
 }
-
 .footer-brand{
     max-width:420px;
 }
-
 .footer-brand h2{
     margin-bottom:12px;
 }
-
 .footer-brand p{
     color:var(--muted);
     line-height:1.7;
 }
-
 .footer-links{
     display:flex;
     gap:18px;
     align-items:flex-start;
     flex-wrap:wrap;
 }
-
 .footer-links a{
     color:var(--muted);
     text-decoration:none;
 }
-
 .footer-links a:hover{
     color:white;
 }
-
 .copyright{
     margin-top:40px;
     color:#776d6d;
     font-size:14px;
 }
-
 /* mobile */
-
 @media(max-width:768px){
-
     .hero h1{
         font-size:64px;
     }
-
     .hero p{
         font-size:18px;
     }
-
     .nav-links{
         display:none;
     }
-
 }
-
-
 .shots-grid{
     display:flex;
     justify-content:center;
@@ -352,79 +283,57 @@ footer{
     flex-wrap:wrap;
     margin-top:40px;
 }
-
 .shot{
     position:relative;
-
     background:rgba(255,255,255,.03);
-
     border:1px solid rgba(255,255,255,.08);
-
     border-radius:28px;
-
     overflow:hidden;
-
     backdrop-filter:blur(14px);
     -webkit-backdrop-filter:blur(14px);
-
     box-shadow:
     0 0 30px rgba(177,77,77,.08),
     0 20px 40px rgba(0,0,0,.35);
-
     transition:
     transform .28s ease,
     box-shadow .28s ease;
 }
-
 .shot:hover{
     transform:translateY(-8px) scale(1.02);
-
     box-shadow:
     0 0 45px rgba(177,77,77,.16),
     0 24px 60px rgba(0,0,0,.42);
 }
-
 .shot img{
     display:block;
     width:100%;
     height:auto;
 }
-
 /* gerçek boyutlara göre optimize */
-
 .shot-small{
     width:260px;
 }
-
 .shot-medium{
     width:320px;
 }
-
 .shot-tall{
     width:300px;
 }
-
 @media(max-width:900px){
-
     .shot-small,
     .shot-medium,
     .shot-tall{
         width:100%;
         max-width:380px;
     }
-
 }
-
 </style>
 </head>
 <body>
-
 <nav>
-
     <div class="logo">
         Ukula
     </div>
-
     <div class="nav-links">
         <a href="#features">Features</a>
         <a href="https://github.com/ukula/ukulaApp/releases/latest"
@@ -434,14 +343,15 @@ footer{
         <a href="privacy.html">Privacy</a>
         <a href="terms.html">Terms</a>
     </div>
-
 </nav>
 
+
+    
 <section class="hero">
 
     <div class="hero-inner">
 
-        <img src="Images/ukula1.png" class="hero-logo">
+       <img src="Images/YOUR-IMAGE.png" class="hero-logo">
 
         <div class="badge">
             OCR • Translate • Windows
@@ -529,15 +439,15 @@ footer{
     <div class="shots-grid">
 
         <div class="shot shot-small">
-            <img src="Images/ukula3.png" alt="Ukula Screenshot">
+            <img src="Images/YOUR-IMAGE.png" alt="Ukula Screenshot">
         </div>
 
         <div class="shot shot-medium">
-            <img src="Images/ukula4.png" alt="Ukula Screenshot">
+            <img src="Images/YOUR-IMAGE.png" alt="Ukula Screenshot">
         </div>
 
         <div class="shot shot-tall">
-            <img src="Images/ukula5.png" alt="Ukula Screenshot">
+            <img src="Images/YOUR-IMAGE.png" alt="Ukula Screenshot">
         </div>
 
     </div>
@@ -560,7 +470,7 @@ footer{
         </div>
 
         <div class="footer-links">
-
+            <a href="LICENCE.html">Licence</a>
             <a href="privacy.html">Privacy</a>
             <a href="terms.html">Terms</a>
             <a href="mailto:sunbeamm@proton.me">Contact</a>
